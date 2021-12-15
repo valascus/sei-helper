@@ -171,7 +171,7 @@ const exec = (pname, fpath, pargs, spc) => {
     pargs = pargs ? ' ' + pargs : '';
     spc   = Boolean(spc) ? '\n' : '';
     console.log(`\n> "${pname}"${pargs}${spc}`);
-    require('child_process').execSync((fpath + pargs), { stdio: 'inherit' });
+    return require('child_process').execSync((fpath + pargs), { stdio: 'inherit' });
 }
 
 const validateNum = (input, min, max) => {
